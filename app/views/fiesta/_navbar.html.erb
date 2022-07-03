@@ -1,28 +1,27 @@
-
-    <!-- Navbar -->
-    <nav class="relative p-6 bg-gray-700 text-white">
-      <!--Flex container-->
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <!--Logo-->
-        <div class="pt-2 flex flex-row items-center gap-5">
-          <!--Image-->
-          <div class="">
-            <%= image_tag "logo_hat.png", class: "max-h-40 md:max-h-20" %>
-          </div>
-          <!--text-->
-          <h1 class="font-curs text-5xl hover:text-slate-500">
-            <%= link_to 'Fiesta Encontrando', root_path %>
-          </h1>
-        </div>
-
-        <!--Menu Items-->
-        <div class="flex flex-col md:flex-row md:items-center md:space-x-6 gap-3 mt-3">
-          <a href="#" class="hover:text-slate-500">Fiestas Pasadas</a>
-          <a href="#" class="hover:text-slate-500">Fiestas Próximas</a>
-          <!--Button-->
-          <%= link_to 'Inscribe', new_user_registration_path, class: "text-center block p-3 px-6 text-slate-900 bg-slate-300 rounded-full hover:bg-slate-200" %>
-          <%= link_to 'Iniciar', new_user_session_path, class: "text-center block p-3 px-6 text-white bg-slate-900 rounded-full hover:bg-slate-800" %>
-        </div>
-
+<!-- Navbar -->
+<nav class="relative p-6 bg-gray-700 text-white">
+  <!--Flex container-->
+  <div class="flex flex-col md:flex-row items-center justify-between">
+    <!--Logo-->
+    <div class="pt-2 flex flex-row items-center gap-5">
+      <!--Image-->
+      <div class="">
+        <%= image_tag "logo_hat.png", class: "max-h-40 md:max-h-20" %>
       </div>
-    </nav>    
+      <!--text-->
+      <h1 class="font-curs text-5xl hover:text-slate-500">
+        <%= link_to 'Fiesta Encontrando', root_path %>
+      </h1>
+    </div>
+
+    <!--Menu Items-->
+    <div class="flex flex-col md:flex-row md:items-center md:space-x-6 gap-3 mt-3">
+      <a href="#" class="hover:text-slate-500">Fiestas Pasadas</a>
+      <a href="#" class="hover:text-slate-500">Fiestas Próximas</a>
+      <!--Button-->
+      <%= link_to 'Inscribe', new_user_registration_path, class: "text-center block p-3 px-6 text-slate-900 bg-slate-300 rounded-full hover:bg-slate-200" %>
+      <%= link_to 'Iniciar', new_user_session_path, class: "text-center block p-3 px-6 text-white bg-slate-900 rounded-full hover:bg-slate-800" %>
+    </div>
+
+  </div>
+</nav>    
