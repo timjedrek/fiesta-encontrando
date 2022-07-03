@@ -19,8 +19,13 @@
       <a href="#" class="hover:text-slate-500">Fiestas Pasadas</a>
       <a href="#" class="hover:text-slate-500">Fiestas Próximas</a>
       <!--Button-->
-      <%= link_to 'Inscribe', new_user_registration_path, class: "text-center block p-3 px-6 text-slate-900 bg-slate-300 rounded-full hover:bg-slate-200" %>
-      <%= link_to 'Iniciar', new_user_session_path, class: "text-center block p-3 px-6 text-white bg-slate-900 rounded-full hover:bg-slate-800" %>
+      <% if user_signed_in? %>
+        <%= button_to 'Desconecta', destroy_user_session_path, method: :delete, class: "text-center block p-3 px-6 text-slate-900 bg-slate-300 rounded-full hover:bg-slate-200" %>
+        <%= link_to 'Perfil', root_path, class: "text-center block p-3 px-6 text-white bg-slate-900 rounded-full hover:bg-slate-800" %>
+      <% else %>
+        <%= link_to 'Inscribe', new_user_registration_path, class: "text-center block p-3 px-6 text-slate-900 bg-slate-300 rounded-full hover:bg-slate-200" %>
+        <%= link_to 'Iniciar', new_user_session_path, class: "text-center block p-3 px-6 text-white bg-slate-900 rounded-full hover:bg-slate-800" %>
+      <% end %>
     </div>
 
   </div>
