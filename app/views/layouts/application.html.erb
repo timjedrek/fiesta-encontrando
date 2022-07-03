@@ -35,7 +35,7 @@
           </div>
           <!--text-->
           <h1 class="font-curs text-5xl hover:text-slate-500">
-            Fiesta Encontrando
+            <%= link_to 'Fiesta Encontrando', root_path %>
           </h1>
         </div>
 
@@ -44,7 +44,7 @@
           <a href="#" class="hover:text-slate-500">Fiestas Pasadas</a>
           <a href="#" class="hover:text-slate-500">Fiestas Próximas</a>
           <!--Button-->
-          <a href="#" class="text-center block p-3 px-6 text-white bg-slate-900 rounded-full hover:bg-slate-800">Enrolar</a>
+          <%= link_to 'Iniciar', new_user_session_path, class: "text-center block p-3 px-6 text-white bg-slate-900 rounded-full hover:bg-slate-800" %>
         </div>
 
       </div>
