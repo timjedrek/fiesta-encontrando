@@ -1,0 +1,2 @@
+class Fiestum < ApplicationRecord
+end
