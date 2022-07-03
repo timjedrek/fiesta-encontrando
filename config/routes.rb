@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "fiesta#index"
+  
   # DEVISE USER RAILS 7 STUFF #
   devise_scope :user do
     # Redirests signing out users back to sign-in
