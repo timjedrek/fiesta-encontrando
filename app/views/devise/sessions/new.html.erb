@@ -1,9 +1,9 @@
 <!--Container for both sides-->
-<div class="flex flex-row h-5/6 bg-slate-900">
+<div class="flex flex-row h-5/6 bg-slate-900 text-slate-200">
 
   <!--Left side form-->
   <div class="flex flex-col md:w-3/5 justify-center items-center">
-      <h1 class="mb-4 text-3xl font-semibold text-center text-slate-200">
+      <h1 class="my-4 text-3xl font-semibold text-center">
       Incia a Fiesta Encontrando
       </h1>
     <div class="items-center justify-center p-6 p-12 md:w-1/2">
@@ -20,26 +20,29 @@
         <%= devise_error_messages! %>
 
         <div class="mt-4">
-          <%= f.label :email, class: "text-sm" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "w-full px-4 py-2 text-sm border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight" %>
+          <%= f.label :el_correro_electrónico, class: "text-sm" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "El correro electrónico", placeholder: "El correro electrónico", class: "w-full px-4 py-2 text-sm text-black border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight" %>
         </div>
         <div>
-            <%= f.label :password, class: "text-sm" %><br />
-            <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "w-full px-4 py-2 text-sm border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight"  %>
+            <%= f.label :contraseña, class: "text-sm" %><br />
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "Contraseña", class: "w-full px-4 py-2 text-sm text-black border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight"  %>
         </div>
         <% if devise_mapping.rememberable? %>
           <%= f.check_box :remember_me, class: "text-brightRed bg-gray-100 rounded border-gray-300" %>
-          <%= f.label :save_login_for_next_time, class: "text-sm" %>
+          <%= f.label :guardar_para_la_próxima_vez, class: "text-sm" %>
         <% end %>
         <br>
-        <%= f.submit "Log in", class: "block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-brightRed border border-transparent rounded-full active:bg-brightRedLight hover:bg-brightRedLight focus:outline-none focus:shadow-outline-red" %>
+        <%= f.submit "Inicia", class: "block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-slate-900 transition-colors duration-150 bg-slate-200 border border-transparent rounded-full active:bg-brightRedLight hover:bg-slate-300 focus:outline-none focus:shadow-outline-red" %>
 
-        <div class="mt-4 text-center">
-          <p class="text-sm">Don't have an account yet? 
-            <%= link_to 'Sign up.', new_user_registration_path, class: "text-brightRed hover:underline" %>
+        <div class="mt-4 text-center flex gap-3 ">
+          <p class="text-sm">¿No tiene una cuenta? 
+            <%= link_to 'Inscribe', new_user_registration_path, class: "hover:underline" %>.
           </p>
-          <p class="text-sm">Did you 
-            <%= link_to "forget your password?", new_password_path(resource_name), class: "text-brightRed hover:underline" %>
+          <p class="text-sm">
+            <%= link_to "¿Olvidaste su contraseña?", new_password_path(resource_name), class: "hover:underline" %>
+          </p>
+          <p class="text-sm">
+            <%= link_to "¿Vuelve ala página principal?", root_path, class: "hover:underline" %>
           </p>
         </div>
         <% end %>
