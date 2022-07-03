@@ -26,7 +26,7 @@
     <!-- Navbar -->
     <nav class="relative p-6 bg-gray-700 text-white">
       <!--Flex container-->
-      <div class="flex items-center justify-between">
+      <div class="flex flex-col md:flex-row items-center justify-between">
         <!--Logo-->
         <div class="pt-2 flex flex-row items-center gap-5">
           <!--Image-->
@@ -34,45 +34,20 @@
             <%= image_tag "logo_hat.png", class: "max-h-40 md:max-h-20" %>
           </div>
           <!--text-->
-          <h1 class="font-curs text-5xl">
+          <h1 class="font-curs text-5xl hover:text-slate-500">
             Fiesta Encontrando
           </h1>
         </div>
-        <!--Menu Items-->
-        <div class="hidden md:flex space-x-6">
-          <a href="#" class="hover:text-darkGrayishBlue">Pricing</a>
-          <a href="#" class="hover:text-darkGrayishBlue">Product</a>
-          <a href="#" class="hover:text-darkGrayishBlue">About Us</a>
-          <a href="#" class="hover:text-darkGrayishBlue">Career</a>
-          <a href="#" class="hover:text-darkGrayishBlue">Contact</a>
-        </div>
-        <!--Button-->
-        <a href="#" class="hidden md:block p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">Get Started</a>
-        <!-- Hamburger Icon -->
-        <button
-          id="menu-btn"
-          class="block hamburger md:hidden focus:outline-none"
-        >
-          <span class="hamburger-top"></span>
-          <span class="hamburger-middle"></span>
-          <span class="hamburger-bottom"></span>
-        </button>
-      </div>
 
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <div
-          id="menu"
-          class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
-        >
-          <a href="#">Pricing</a>
-          <a href="#">Product</a>
-          <a href="#">About Us</a>
-          <a href="#">Careers</a>
-          <a href="#">Community</a>
+        <!--Menu Items-->
+        <div class="flex flex-col md:flex-row md:items-center md:space-x-6 gap-3 mt-3">
+          <a href="#" class="hover:text-slate-500">Fiestas Pasadas</a>
+          <a href="#" class="hover:text-slate-500">Fiestas Próximas</a>
+          <!--Button-->
+          <a href="#" class="text-center block p-3 px-6 text-white bg-slate-900 rounded-full hover:bg-slate-800">Enrolar</a>
         </div>
+
       </div>
-      
     </nav>    
 
     <%= yield %>
