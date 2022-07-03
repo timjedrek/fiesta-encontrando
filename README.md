@@ -1,24 +1,7 @@
-# README
+# EL README DE FIESTA ENCONTRANDO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este es un aplicación web de Ruby on Rails que usa Tailwind CSS, Devise Authentication, y Postgres Database. Los usuarios pueden crear fiestas y ir a fiestas.
 
-Things you may want to cover:
+## LAS NOTAS ##
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+La fetcha de creacion del proyecto:  2 de julio, 2022
