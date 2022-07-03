@@ -6,8 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap" rel="stylesheet">
+
     <%= javascript_importmap_tags %>
   </head>
 
@@ -21,12 +24,19 @@
     <% end %>
 
     <!-- Navbar -->
-    <nav class="relative container mx-auto p-6">
+    <nav class="relative p-6 bg-gray-700 text-white">
       <!--Flex container-->
       <div class="flex items-center justify-between">
         <!--Logo-->
-        <div class="pt-2">
-          <h1>Fiesta Encontrando</h1>
+        <div class="pt-2 flex flex-row items-center gap-5">
+          <!--Image-->
+          <div class="">
+            <%= image_tag "logo_hat.png", class: "max-h-40 p-0 md:max-h-20" %>
+          </div>
+          <!--text-->
+          <h1 class="font-curs text-5xl">
+            Fiesta Encontrando
+          </h1>
         </div>
         <!--Menu Items-->
         <div class="hidden md:flex space-x-6">
