@@ -22,9 +22,10 @@
 
         <div class="mt-4">
           <%= f.label :el_correro_electrónico, class: "text-sm" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "El correro electrónico", class: "w-full px-4 py-2 text-sm text-black border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "El correro electrónico", placeholder: "El correro electrónico", class: "w-full px-4 py-2 text-sm text-black border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight" %>
         </div>
         <div>
+            <%###### This don't work yet.  Need to make model table add new column for username #######%>
             <%= f.label :nombre_de_usuario, class: "text-sm" %><br />
             <%= f.text_field :username, autocomplete: "username", placeholder: "Nombre de usuario", class: "w-full px-4 py-2 text-sm text-black border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight"  %>
         </div>
