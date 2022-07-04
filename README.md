@@ -11,4 +11,4 @@ July 3 - Scrapping project.  Database and forms are not working for some reason.
 NoMethodError in FiestaController#new
 undefined method `fiestum' for #<User id: XX, email: "XXXXX@gmail.com", created_at: "2022-07-04 03:01:35.723910000 +0000", updated_at: "2022-07-04 03:01:35.723910000 +0000", username: nil>
 
-ugh.. Also, rails though Fiesta is plural when it's not and then singular-ized the word to fiestum which is pretty confusing.  Also, this is in Spanish.. I think the code should remain English and then just change the text on the view to Spanish to make it simpler.
+ugh.. Also, rails thought Fiesta is plural when it's not and then singular-ized the word to fiestum which is pretty confusing.  Also, this is in Spanish.. I think the code should remain English and then just change the text on the view to Spanish to make it simpler.
