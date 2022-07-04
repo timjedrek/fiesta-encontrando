@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :created_fiesta, foreign_key: :creator_id, class_name: 'Event', dependent: :destroy
+  has_many :created_fiestum, foreign_key: :creator_id, class_name: 'Fiestum', dependent: :destroy
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
