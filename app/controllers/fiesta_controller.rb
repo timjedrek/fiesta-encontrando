@@ -12,7 +12,7 @@ class FiestaController < ApplicationController
 
   # GET /fiesta/new
   def new
-    @fiestum = Fiestum.new
+    @fiestum = current_user.fiestum.build(fiestum_params)
   end
 
   # GET /fiesta/1/edit
@@ -21,7 +21,7 @@ class FiestaController < ApplicationController
 
   # POST /fiesta or /fiesta.json
   def create
-    @fiestum = Fiestum.new(fiestum_params)
+    @fiestum = current_user.fiestum.build(fiestum_params)
 
     respond_to do |format|
       if @fiestum.save
