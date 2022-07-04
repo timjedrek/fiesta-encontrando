@@ -1,9 +1,12 @@
 class FiestaController < ApplicationController
   before_action :set_fiestum, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /fiesta or /fiesta.json
   def index
     @fiesta = Fiestum.all
+    ##not sure why this is here...
+    #@fiesta = Fiestum.new
   end
 
   # GET /fiesta/1 or /fiesta/1.json
