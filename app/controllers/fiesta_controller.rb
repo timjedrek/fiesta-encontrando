@@ -15,7 +15,7 @@ class FiestaController < ApplicationController
 
   # GET /fiesta/new
   def new
-    @fiestum = current_user.fiesta.build
+    @fiestum = current_user.created_fiesta.build #<---- This right here is causing errors. somehow.
   end
 
   # GET /fiesta/1/edit
@@ -24,7 +24,7 @@ class FiestaController < ApplicationController
 
   # POST /fiesta or /fiesta.json
   def create
-    @fiestum = current_user.fiesta.build(fiestum_params)
+    @fiestum = current_user.created_fiesta.build(fiestum_params)
 
     respond_to do |format|
       if @fiestum.save

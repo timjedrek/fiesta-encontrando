@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :created_fiestum, foreign_key: :creator_id, class_name: 'Fiestum', dependent: :destroy
+  has_many :created_fiesta, foreign_key: "creator_id", class_name: "Fiesta", dependent: :destroy
 end
