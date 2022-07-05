@@ -1,3 +1,41 @@
+<div class="md:grid md:grid-cols-3 md:gap-4 bg-slate-900">
+<% @fiesta.reverse_each do | fiestum | %>
+  <div id="<%= dom_id fiestum %>" class="bg-slate-100 rounded-xl p-2 m-1 mt-5 flex flex-col justify-between">
+    <div class="">
+      <p class="">
+        <!--The title / headline of the fiestum-->
+        <strong class="block font-medium mb-1">
+        <%= link_to fiestum.nombre, fiestum, class: "" %>
+        </strong>
+
+        <!--Content.. the fiestum itself-->
+        <div class="">
+          <%#= fiestum.descripcion %>
+          <%= link_to fiestum.descripcion, fiestum, class: "" %>
+        </div>
+      </p>
+    </div>
+    <div class="flex flex-row justify-between">
+      <!--buttons-->
+      <div class="text-xs flex text-gray-400 items-end hover:text-gray-500">
+        <%= link_to "Más información", fiestum, class: "" %><br>
+      </div>
+
+      <!--Signature-->
+      <div class="text-xs text-gray-400">
+        <!--Username-->
+        @<%= fiestum.creator.username %> <br>
+        <!--Time Stamp-->
+        <%= fiestum.created_at.strftime("%B %d, %Y") %>
+        <br>
+      </div>
+    
+    </div>
+  </div>
+
+<% end %>
+</div>
+
 <div class="w-full">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
