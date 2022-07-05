@@ -1,5 +1,4 @@
-
-<div class="bg-slate-100 px-2 md:px-10 md:py-10 ">
+<div class="bg-white px-2 md:px-10 md:py-10 ">
   <!--Headline and view more-->
   <div class="flex flex-row justify-between py-3">
     <!--Headline-->
@@ -14,7 +13,7 @@
   <!--Actual feed content-->
   <div class="flex flex-row overflow-x-scroll" >
     <% @fiesta.limit(6).reverse_each do | fiestum | %>
-      <div id="<%= dom_id fiestum %>" class="bg-slate-100 drop-shadow-md rounded-xl p-0 mx-2 mb-2 w-64 h-96 flex flex-col justify-between ">
+      <div id="<%= dom_id fiestum %>" class="bg-white drop-shadow-md rounded-xl p-0 mx-2 mb-2 w-64 h-96 flex flex-col justify-between ">
         <div class="">
           <p class="text-center bg-slate-200 w-full">
             <!--The title / headline of the fiestum-->
