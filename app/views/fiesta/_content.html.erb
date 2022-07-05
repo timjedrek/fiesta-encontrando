@@ -24,41 +24,40 @@
           <% end %>
         </div>
         
-        <!--date-->
+        <!--Date-->
         <div class="px-3">
           <strong class="block font-medium mb-1">
-            <%= link_to fiestum.fetcha, fiestum, class: "hover:text-gray-600" %>
+            <%= link_to fiestum, class: "text-xs hover:text-gray-600" do %>
+              <%= fiestum.fetcha.strftime("%^a, %^b %-d, %Y") %>
+            <% end %>
           </strong>
         </div>
 
-        <!--Details-->
+        <!--Name-->
         <div class="px-3">
           <strong class="block font-medium mb-1">
             <%= link_to fiestum.nombre, fiestum, class: "hover:text-gray-600" %>
           </strong>
         </div>
 
-        <!--Content.. the fiestum itself-->
+        <!--Location...  THIS IS NOT DONE YET-->
         <div class="px-3">
           <%#= fiestum.descripcion %>
-          <%= link_to fiestum.descripcion, fiestum, class: "hover:text-gray-600" %>
+          <%#= fiestum.lugar %>
+          <%= link_to "Lugar al azar", fiestum, class: "hover:text-gray-600" %>
         </div>
         
 
         <div class="flex flex-row justify-between">
           <!--buttons-->
-          <div class="text-xs flex text-gray-400 items-end hover:text-gray-500">
-            <%= link_to "Más información", fiestum, class: "" %><br>
+          <div class="px-3 bg-slate-100 w-5/6 m-3 mr-1 text-center rounded-md hover:bg-slate-200 ">
+            <%= link_to "★ Interestante", fiestum, class: "" %><br>
           </div>
 
-          <!--Signature-->
-          <div class="text-xs text-gray-400">
-            <!--Username-->
-            @<%= fiestum.creator.username %> <br>
-            <!--Time Stamp-->
-            <%= fiestum.created_at.strftime("%B %d, %Y") %>
-            <br>
+          <div class="px-3 bg-slate-100 w-1/6 m-3 ml-1 text-center rounded-md hover:bg-slate-200 ">
+            <%= link_to "?", fiestum, class: "" %><br>
           </div>
+
         </div>
       </div>  
     <% end %>
