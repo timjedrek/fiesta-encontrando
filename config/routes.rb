@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
   devise_for :users, :controllers => {registrations: "registrations"}
 
+  # PROFILE PAGE #
+  get '/fiesta/perfil', to: 'fiesta#perfil'
+
   # FROM SCAFFOLDING FIESTA #
   resources :fiesta
 end

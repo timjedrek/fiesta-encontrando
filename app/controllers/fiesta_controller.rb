@@ -18,6 +18,11 @@ class FiestaController < ApplicationController
     @fiestum = current_user.created_fiesta.build #<---- This right here is causing errors. somehow.
   end
 
+  # GET /fiesta/perfil
+  def perfil
+    @fiesta = current_user.created_fiesta.all
+  end
+
   # GET /fiesta/1/edit
   def edit
   end
