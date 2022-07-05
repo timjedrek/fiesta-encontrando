@@ -15,12 +15,13 @@ class FiestaController < ApplicationController
 
   # GET /fiesta/new
   def new
-    @fiestum = current_user.created_fiesta.build #<---- This right here is causing errors. somehow.
+    @fiestum = current_user.created_fiesta.build 
   end
 
   # GET /fiesta/perfil
   def perfil
     @fiesta = current_user.created_fiesta.all
+    @attended_fiesta = current_user.attended_fiesta #<---- to view attended events on profile page
   end
 
   # GET /fiesta/1/edit
