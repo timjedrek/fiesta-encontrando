@@ -28,25 +28,28 @@
   </div>
 
   <!--Created by-->
-  <div class="px-3 italic text-xs">
+  <div class="px-3 italic text-xs mb-3">
     <%= link_to fiestum, class: "hover:text-gray-600" do %>
       Credado por @<%= fiestum.creator.username %>
     <% end %>
   </div>
 
   <!--buttons-->  
-  <div class="flex flex-row justify-between">
-    <% if current_user && fiestum.creator != current_user && !fiestum.attendees.include?(current_user) %>
-      <%= link_to create_attending_fiestum_path(:user_id => current_user.id, :id => fiestum.id), method: :post, class: "px-3 bg-slate-100 w-5/6 m-3 mr-1 text-center rounded-md hover:bg-slate-200 " do %>
-        ★ Interestante
+  <% if user_signed_in? %>
+    <div class="flex flex-row justify-between items-start">
+      <% if current_user && fiestum.creator != current_user && !fiestum.attendees.include?(current_user) %>
+        <%= link_to create_attending_fiestum_path(:user_id => current_user.id, :id => fiestum.id), method: :post, class: "px-3 bg-slate-100 w-5/6 m-3 mr-1 mt-0 text-center rounded-md hover:bg-slate-200 " do %>
+          ★ Interestante
+        <% end %>
+      <% else %>
+        <%= link_to fiestum, class: "px-3 bg-slate-300 w-5/6 m-3 mt-0 mr-1  text-center rounded-md hover:bg-slate-400 " do %>
+          ✓ Vamos a la fiesta
+        <% end %>
       <% end %>
-    <% else %>
-      <%= link_to fiestum, class: "px-3 bg-slate-300 w-5/6 m-3 mr-1 text-center rounded-md hover:bg-slate-400 " do %>
-        ✓ Vamos a la fiesta
+      
+      <%= link_to fiestum, class: "px-3 bg-slate-100 w-1/6 m-3 mt-0 text-center rounded-md hover:bg-slate-200 " do %>
+          ?
       <% end %>
-    <% end %>
-    <%= link_to fiestum, class: "px-3 bg-slate-100 w-1/6 m-3 mr-1 text-center rounded-md hover:bg-slate-200 " do %>
-        ?
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
