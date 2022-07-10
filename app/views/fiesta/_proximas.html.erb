@@ -48,16 +48,26 @@
           <%= link_to "Lugar al azar", fiestum, class: "hover:text-gray-600" %>
         </div>
         
+        <!--Created by-->
+        <div class="px-3 italic text-xs">
+          <%#= fiestum.descripcion %>
+          <%#= fiestum.lugar %>
+          <%= link_to fiestum, class: "hover:text-gray-600" do %>
+            Credado por @<%= fiestum.creator.username %>
+          <% end %>
+
+        </div>
 
         <div class="flex flex-row justify-between">
-          <!--buttons-->
-          <div class="px-3 bg-slate-100 w-5/6 m-3 mr-1 text-center rounded-md hover:bg-slate-200 ">
-            <%= link_to "★ Interestante", fiestum, class: "" %><br>
-          </div>
+          <!--buttons-->  
+          <%= link_to fiestum, class: "px-3 bg-slate-100 w-5/6 m-3 mr-1 text-center rounded-md hover:bg-slate-200 " do %>
+              ★ Interestante
+          <% end %>
 
-          <div class="px-3 bg-slate-100 w-1/6 m-3 ml-1 text-center rounded-md hover:bg-slate-200 ">
-            <%= link_to "?", fiestum, class: "" %><br>
-          </div>
+          <%= link_to fiestum, class: "px-3 bg-slate-100 w-1/6 m-3 mr-1 text-center rounded-md hover:bg-slate-200 " do %>
+              ?
+          <% end %>
+
 
         </div>
       </div>  
