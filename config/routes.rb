@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   # PROFILE PAGE #
   get '/fiesta/perfil', to: 'fiesta#perfil'
 
+  # ATTENDING FIESTAS #
+  get 'fiesta/:id/users/:user_id/', to: "attending_fiesta#create", as: "create_attending_fiestum"
+  get '/users/:id/attended_events', to: "users#show_attended_fiesta", as: "show_attended_fiesta"
+
   # FROM SCAFFOLDING FIESTA #
   resources :fiesta
+
+
 end

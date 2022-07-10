@@ -7,6 +7,9 @@ class AttendingFiestaController < ApplicationController
     @fiestum = Fiestum.find(params[:id])
     @fiestum.attendees << current_user
     flash[:notice] = "Se registró para la fiesta"
-    redirect_to_root_path
+    redirect_to root_path
+  end
+
+  def destroy
   end
 end
