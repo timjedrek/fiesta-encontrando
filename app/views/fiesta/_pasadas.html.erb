@@ -8,16 +8,14 @@
     </div>
   </div>
   <!--Actual feed content-->
-  <div class="flex flex-col pb-10" >
+  <div class="flex flex-col items-center pb-10" >
     <% @fiesta.limit(6).reverse_each do | fiestum | %>
-      <div id="<%= dom_id fiestum %>" class="flex flex-col justify-start bg-white drop-shadow-md rounded-xl p-0 mx-2 mb-5">
-        <%= render "bubble", fiestum: fiestum  %>
-      </div>
+      <%= render "bubble", fiestum: fiestum  %>
     <% end %>
 
     <!--View more button-->
-    <div class="flex flex-col justify-center bg-white drop-shadow-md rounded-xl text-center h-32 p-0 mx-2 mb-5">
-      <div class="flex flex-row justify-center text-slate-500 hover:bg-slate-100 rounded-xl p-2 ">
+    <div class="flex flex-col items-center justify-center bg-white drop-shadow-md rounded-xl w-72 h-32 p-0 mx-2 mb-5">
+      <div class="flex flex-row justify-center text-slate-500 hover:bg-slate-100 rounded-xl p-2 w-30">
         Ver más
       </div>
     </div>
