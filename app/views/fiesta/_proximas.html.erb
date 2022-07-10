@@ -50,12 +50,9 @@
         
         <!--Created by-->
         <div class="px-3 italic text-xs">
-          <%#= fiestum.descripcion %>
-          <%#= fiestum.lugar %>
           <%= link_to fiestum, class: "hover:text-gray-600" do %>
             Credado por @<%= fiestum.creator.username %>
           <% end %>
-
         </div>
 
         <div class="flex flex-row justify-between">
