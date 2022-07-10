@@ -1,0 +1,66 @@
+<!--Fiestas proximas section-->
+<div class="bg-white px-2 md:px-10 md:pb-10 md:pt-5 ">
+  <!--Headline and view more-->
+  <div class="flex flex-row justify-between items-center py-3">
+    <!--Headline-->
+    <div class="font-bold text-2xl">
+      Fiestas Proximas
+    </div>
+    <!--View More-->
+    <div class="text-slate-500 hover:bg-slate-100 rounded-xl p-2">
+      Ver más
+    </div>
+  </div>
+  <!--Actual feed content-->
+  <div class="flex flex-row overflow-x-scroll pb-10" >
+    <% @fiesta.limit(6).reverse_each do | fiestum | %>
+      <!--Each bubble-->
+      <div id="<%= dom_id fiestum %>" class="flex flex-col justify-start bg-white drop-shadow-md rounded-xl p-0 mx-2 mb-2">
+
+        <!--Picture-->
+        <div class="text-center w-full h-48 w-72 ">
+          <%#= image_tag "fiestas/#{rand(12)}", class: "h-48 object-cover rounded-t-xl" %>
+          <%= link_to fiestum do %>
+            <%= image_tag "fiestas/#{rand(12)}", class: "h-48 object-cover rounded-t-xl" %>
+          <% end %>
+        </div>
+        
+        <!--Date-->
+        <div class="px-3">
+          <strong class="block font-medium mb-1">
+            <%= link_to fiestum, class: "text-xs hover:text-gray-600" do %>
+              <%= fiestum.fetcha.strftime("%^a, %^b %-d, %Y") %>
+            <% end %>
+          </strong>
+        </div>
+
+        <!--Name of event-->
+        <div class="px-3">
+          <strong class="block font-medium mb-1">
+            <%= link_to fiestum.nombre, fiestum, class: "hover:text-gray-600" %>
+          </strong>
+        </div>
+
+        <!--Location...  THIS IS NOT DONE YET-->
+        <div class="px-3">
+          <%#= fiestum.descripcion %>
+          <%#= fiestum.lugar %>
+          <%= link_to "Lugar al azar", fiestum, class: "hover:text-gray-600" %>
+        </div>
+        
+
+        <div class="flex flex-row justify-between">
+          <!--buttons-->
+          <div class="px-3 bg-slate-100 w-5/6 m-3 mr-1 text-center rounded-md hover:bg-slate-200 ">
+            <%= link_to "★ Interestante", fiestum, class: "" %><br>
+          </div>
+
+          <div class="px-3 bg-slate-100 w-1/6 m-3 ml-1 text-center rounded-md hover:bg-slate-200 ">
+            <%= link_to "?", fiestum, class: "" %><br>
+          </div>
+
+        </div>
+      </div>  
+    <% end %>
+  </div>
+</div>
