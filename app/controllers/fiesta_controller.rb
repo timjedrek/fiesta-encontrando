@@ -34,7 +34,7 @@ class FiestaController < ApplicationController
 
     respond_to do |format|
       if @fiestum.save
-        format.html { redirect_to fiestum_url(@fiestum), notice: "Fiestum was successfully created." }
+        format.html { redirect_to root_path, notice: "Fiestum was successfully created." }
         format.json { render :show, status: :created, location: @fiestum }
       else
         format.html { render :new, status: :unprocessable_entity }
