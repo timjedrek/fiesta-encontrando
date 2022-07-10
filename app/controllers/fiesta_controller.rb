@@ -74,6 +74,6 @@ class FiestaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def fiestum_params
-      params.require(:fiestum).permit(:nombre, :descripcion, :fetcha)
+      params.require(:fiestum).permit(:nombre, :descripcion, :fetcha, :lugar)
     end
 end
