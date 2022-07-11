@@ -1,3 +1,79 @@
+<div class="flex flex-col">
+  <!-- Navbar -->
+  <nav class="relative p-6 bg-gray-700 text-white">
+    <!--Flex container-->
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <!--Logo-->
+      <div class="pt-2 flex flex-row items-center gap-5">
+        <!--Image-->
+        <div class="">
+          <%= image_tag "logo_hat.png", class: "max-h-40 md:max-h-20" %>
+        </div>
+        <!--text-->
+        <h1 class="font-curs text-5xl hover:text-slate-500">
+          <%= link_to 'Fiesta Encontrando', root_path %>
+        </h1>
+      </div>
+    </div>
+  </nav>
+
+  <!--Image-->
+  <div class="text-center min-w-full ">
+    <%= image_tag "fiestas/#{rand(12)}", class: "object-cover" %>
+  </div>
+  
+  <!--date-->
+  <div class="mt-2 px-3 text-xs font-medium">
+    <%= @fiestum.fetcha.strftime("%^a, %^b %-d, %Y") %> at <%= @fiestum.fetcha.strftime("%l:%M %p") %>
+  </div>
+  
+  <!--Name-->
+  <div class="px-3">
+    <strong class="block font-bold text-2xl">
+      <%= @fiestum.nombre %>
+    </strong>
+  </div>
+
+  <!--Location.-->
+  <div class="px-3 text-slate-700">
+    <%= @fiestum.lugar %>
+  </div>
+
+  <!--Buttons-->
+  <div class="flex flex-row justify-center text-sm">
+    <!--star-->
+    <div class="flex flex-col items-center m-3">
+      <div class="bg-slate-100 text-black w-min px-3 py-1 rounded-full text-center text-xl hover:bg-slate-300">
+        ★
+      </div>
+      Interestante
+    </div>
+    <!--more info-->
+    <div class="flex flex-col items-center m-3">
+      <div class="bg-slate-100 text-black w-min px-3 py-1 rounded-full text-center text-xl text-bold hover:bg-slate-300">
+        ＋
+      </div>
+      Más información
+    </div>
+    <!--back-->
+    <div class="flex flex-col m-3">
+      <%= link_to root_path, class: "flex flex-col items-center" do %>
+        <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300">
+          ↩
+        </div>
+        Vuelve Atrás
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<br>
+<hr>
+<!--Template below-->
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
     <% if notice.present? %>
