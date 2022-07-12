@@ -1,24 +1,33 @@
 <!--Container for both sides-->
 <!--This code was taken from the sign in page and then modified.  Just simply reversing the sides for effect-->
-<div class="flex flex-row-reverse h-screen bg-slate-900 text-slate-200">
+<div class="flex flex-row-reverse h-full bg-slate-900 text-slate-200">
 
   <!--Left side form-->
   <div class="flex flex-col md:w-3/5 justify-center items-center">
       <h1 class="my-4 text-3xl font-semibold text-center">
       Incribe Una Cuenta
       </h1>
-    <div class="items-center justify-center p-6 p-12 md:w-1/2">
+    <div class="items-center justify-center pt-6 p-12 md:w-1/2">
       <div class="w-full">
         
         <% if notice.present? %>
-          <p class="my-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" id="notice"><%= notice %></p>
+          <p class="my-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" id="notice"><%= notice %></p>      
         <% end %>
         <% if alert.present? %>
           <p class="my-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" id="alert"><%= alert %></p>
         <% end %>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { data: { turbo: false} } ) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        <%= devise_error_messages! %>
+        
+        
+          <% if devise_error_messages!.present? %>
+            <div class="my-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" id="alert">
+              <%= devise_error_messages! %>
+            </div>
+          <% end %>
+        
+        
+        <%#= render "devise/shared/error_messages", resource: resource %>
+        <%#= devise_error_messages! %>
 
         <div class="mt-4">
           <%= f.label :el_correro_electrónico, class: "text-sm" %><br />
