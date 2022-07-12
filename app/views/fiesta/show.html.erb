@@ -40,14 +40,27 @@
   </div>
 
   <!--Buttons-->
-  <div class="flex flex-row justify-center text-sm">
+  <div class="flex flex-row justify-around text-sm">
     <!--star-->
-    <div class="flex flex-col items-center m-3">
-      <div class="bg-slate-100 text-black w-min px-3 py-1 rounded-full text-center text-xl hover:bg-slate-300">
-        ★
+    <% if user_signed_in? %>
+      <div class="flex flex-col m-3">
+        <%= link_to root_path, class: "flex flex-col items-center text-center" do %>
+          <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300">
+            ★
+          </div>
+          Interestante
+        <% end %>
       </div>
-      Interestante
-    </div>
+    <% else %>
+      <div class="flex flex-col m-3">
+        <%= link_to new_user_session_path, class: "flex flex-col items-center text-center" do %>
+          <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300">
+            ★
+          </div>
+          Inicia para <br>va alas fiestas
+        <% end %>
+      </div>
+    <% end %>
     <!--more info-->
     <div class="flex flex-col items-center text-center m-3">
       <div class="bg-slate-100 text-black w-min px-3 py-1 rounded-full text-center text-xl text-bold hover:bg-slate-300">
