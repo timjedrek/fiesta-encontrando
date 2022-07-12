@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   # ATTENDING FIESTAS #
   get 'fiesta/:id/users/:user_id/', to: "attending_fiesta#create", as: "create_attending_fiestum"
+  get 'fiesta/:id/users/:user_id/', to: "attending_fiesta#crear", as: "crear_attending_fiestum"
+
   get '/users/:id/attended_events', to: "users#show_attended_fiesta", as: "show_attended_fiesta"
 
   # FROM SCAFFOLDING FIESTA #
