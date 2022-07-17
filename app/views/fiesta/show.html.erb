@@ -90,6 +90,24 @@
     </div>
   </div>
 
+  <!--What to expect-->
+  <div class="px-3">
+    <strong class="block font-bold text-lg">
+      Que esperar
+    </strong>
+    <div class=""> 
+      <%= @fiestum.descripcion %>
+    </div>
+  </div>
+
+  <!--Meet the host-->
+  <div class="px-3">
+    <strong class="block font-bold text-lg">
+      Conoce al creador de fiesta
+    </strong>
+     @<%= @fiestum.creator.username %> crea esta fiesta en <%= @fiestum.created_at.strftime("%b %-d, %Y") %>
+  </div>
+
 </div>
 
 
