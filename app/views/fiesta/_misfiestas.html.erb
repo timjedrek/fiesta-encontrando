@@ -3,7 +3,7 @@
   <!--Actual feed content-->
   <div class="flex flex-col items-center pb-10" >
     <% current_user.created_fiesta.reverse_each do | fiestum | %>
-      <%= render "bubble", fiestum: fiestum%>
+      <%= render "bubble", fiestum: fiestum %>
     <% end %>
   </div>
 </div>
