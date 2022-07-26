@@ -51,7 +51,7 @@
     <% if user_signed_in? %>
       <% if current_user && @fiestum.creator != current_user && !@fiestum.attendees.include?(current_user) %>
         <div class="flex flex-col m-3">
-          <%= link_to crear_attending_fiestum_path(:user_id => current_user.id, :id => @fiestum.id), method: :post, class: "flex flex-col items-center text-center" do %>
+          <%= link_to create_attending_fiestum_path(:user_id => current_user.id, :id => @fiestum.id), method: :post, class: "flex flex-col items-center text-center" do %>
             <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300">
               ★
             </div>
