@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
   get '/users/:id/attended_events', to: "users#show_attended_fiesta", as: "show_attended_fiesta"
 
+  # NOT ATTENDING FIESTAS #
+  delete 'fiesta/:id/users/:user_id/', to: "atternding_fieta#destroy", as: "destroy_attending_fiestum"
+
   # FROM SCAFFOLDING FIESTA #
   resources :fiesta
 
