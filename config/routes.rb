@@ -8,20 +8,20 @@ Rails.application.routes.draw do
   end
   devise_for :users, :controllers => {registrations: "registrations"}
 
-  # PROFILE PAGE #
-  get '/fiesta/perfil', to: 'fiesta#perfil'
-
-  # ATTENDING FIESTAS #
-  get 'fiesta/:id/users/:user_id/', to: "attending_fiesta#create", as: "create_attending_fiestum"
-  get 'fiesta/:id/users/:user_id/', to: "attending_fiesta#crear", as: "crear_attending_fiestum"
-
-  get '/users/:id/attended_events', to: "users#show_attended_fiesta", as: "show_attended_fiesta"
-
-  # NOT ATTENDING FIESTAS #
-  delete 'fiesta/:id/users/:user_id/', to: "atternding_fieta#destroy", as: "destroy_attending_fiestum"
-
   # FROM SCAFFOLDING FIESTA #
   resources :fiesta
+
+  # NOT ATTENDING FIESTAS #
+  delete 'fiesta/:id/users/:user_id/', to: "attending_fiesta#destroy", as: "destroy_attending_fiestum"
+  # ATTENDING FIESTAS #
+  post 'fiesta/:id/users/:user_id/', to: "attending_fiesta#create", as: "create_attending_fiestum"
+
+  # PROFILE PAGE #
+  get '/fiesta/perfil', to: 'fiesta#perfil'
+  # SHOW ATTENDING FIESTAS IN PROFILE PAGE #
+  get '/users/:id/attended_events', to: "users#show_attended_fiesta", as: "show_attended_fiesta"
+
+
 
 
 end

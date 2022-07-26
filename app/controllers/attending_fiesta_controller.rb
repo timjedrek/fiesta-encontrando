@@ -13,7 +13,7 @@ class AttendingFiestaController < ApplicationController
   def destroy
     @fiestum = Fiestum.find(params[:id])
     @fiestum.attendees.delete(current_user)
-    flash[:notice] = "¿Por qué no quieres ir a la fiesta? No registrado"
+    flash[:notice] = "¿Por qué no quieres ir a la fiesta? No registrado."
     redirect_to root_path
   end
 end
