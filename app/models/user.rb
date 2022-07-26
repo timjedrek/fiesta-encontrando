@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   has_many :attending_fiesta, dependent: :destroy
   has_many :attended_fiesta, through: :attending_fiesta, source: :fiestum, foreign_key: "attendee_id"
+
+  validates_uniqueness_of :username
 end
