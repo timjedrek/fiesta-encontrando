@@ -10,14 +10,6 @@ class AttendingFiestaController < ApplicationController
     redirect_to root_path
   end
 
-  # making another create function for show view so that when users click attend, it stays on the same page rather than redirect.
-  def crear
-    @fiestum = Fiestum.find(params[:id])
-    @fiestum.attendees << current_user
-    flash[:notice] = "test test"
-    redirect_to @fiestum
-  end
-
   def destroy
     @fiestum = Fiestum.find(params[:id])
     @fiestum.attendees.delete(current_user)
