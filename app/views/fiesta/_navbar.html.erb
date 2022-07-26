@@ -22,8 +22,8 @@
 
     <!--Menu Items-->
     <div class="flex flex-col md:flex-row md:items-center md:space-x-6 gap-3 mt-3">
-      <a href="#" class="hover:text-slate-500">Fiestas Pasadas</a>
-      <a href="#" class="hover:text-slate-500">Fiestas Próximas</a>
+      <a href="#" class="hidden hover:text-slate-500 md:block">Fiestas Pasadas</a>
+      <a href="#" class="hidden hover:text-slate-500 md:block">Fiestas Próximas</a>
       <!--Button-->
       <% if user_signed_in? %>
         <%= button_to 'Desconecta', destroy_user_session_path, method: :delete, class: "text-center block p-3 px-6 text-slate-900 bg-slate-300 rounded-full hover:bg-slate-200" %>
