@@ -3,11 +3,12 @@ class AttendingFiestaController < ApplicationController
     @fiestum = Fiestum.find(params[:id])
   end
 
+  # Join a party
   def create
     @fiestum = Fiestum.find(params[:id])
     @fiestum.attendees << current_user
     flash[:notice] = "Se registró para la fiesta. Genial!"
-    redirect_to root_path
+    redirect_to request.referer, anchor: "fiestum_#{@fiestum.id}" # Anchor isn't working....
   end
 
   def destroy

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # ATTENDING FIESTAS #
   post 'fiesta/:id/users/:user_id/', to: "attending_fiesta#create", as: "create_attending_fiestum"
 
+
   # PROFILE PAGE #
   get '/fiesta/perfil', to: 'fiesta#perfil'
   # SHOW ATTENDING FIESTAS IN PROFILE PAGE #
