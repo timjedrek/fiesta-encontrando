@@ -6,7 +6,7 @@ Este es un aplicación web de Ruby on Rails que usa Tailwind CSS, Devise Authent
 
 La fetcha de creacion del proyecto:  2 de julio, 2022
 
-### LISATA DE QUEHACERES ###
+### LISTA DE QUEHACERES ###
 * Problemas de back-end
    - Necesita va y no va una fiesta. En este momento, solo puedes va a un evento.  no puede no ir.
    - Todos usarios pueden edita cada fiesta.  Necesita limita este funcion por el creador solomente.
