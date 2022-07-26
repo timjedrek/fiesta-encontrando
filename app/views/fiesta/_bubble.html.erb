@@ -41,6 +41,10 @@
         <%= link_to create_attending_fiestum_path(:user_id => current_user.id, :id => fiestum.id), method: :post, class: "px-3 bg-slate-100 w-5/6 m-3 mr-1 mt-0 text-center rounded-md hover:bg-slate-200 " do %>
           ★ Interestante
         <% end %>
+      <% elsif fiestum.creator == current_user %>
+        <%= link_to fiestum, class: "px-3 bg-slate-300 w-5/6 m-3 mr-1 mt-0 text-center rounded-md hover:bg-slate-400 " do %>
+          ✓ Creaste la fiesta
+        <% end %>      
       <% else %>
         <%= link_to fiestum, class: "px-3 bg-slate-300 w-5/6 m-3 mt-0 mr-1  text-center rounded-md hover:bg-slate-400 " do %>
           ✓ Vamos a la fiesta
