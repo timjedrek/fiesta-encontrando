@@ -10,7 +10,7 @@ La fetcha de creacion del proyecto:  2 de julio, 2022
 - clasificación de eventos futuros y próximos
 - creación de páginas para el feed de eventos futuros y los próximos eventos
 - CSS para talla de computadora 
-- Editar fiesta no completo CSS
+- Editar fiesta y editar perfil de usario no completo CSS
 - Crear perfiles públicos de cada usuario.
 - usario perfiles necesita que fiestas creaste
 - agrega función para subir imágenes por cada evento

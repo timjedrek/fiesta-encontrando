@@ -10,7 +10,8 @@
   <div class="px-3">
     <strong class="block font-medium mb-1">
       <%= link_to fiestum, class: "text-xs hover:text-gray-600" do %>
-        <%= fiestum.fetcha.strftime("%^a, %^b %-d, %Y") %>
+        <%#= fiestum.fetcha.strftime("%^a, %^b %-d, %Y") %>
+        <%=  I18n.localize(fiestum.fetcha, :format => '%^a, %^b %-d, %Y') %>
       <% end %>
     </strong>
   </div>
