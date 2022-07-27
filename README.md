@@ -13,5 +13,4 @@ La fetcha de creacion del proyecto:  2 de julio, 2022
 - Editar fiesta no completo CSS
 - Crear perfiles públicos de cada usuario.
 - usario perfiles necesita que fiestas creaste
-X cambiar mensajes de error a español.  ahora mismo estan en ingles.
 - agrega función para subir imágenes por cada evento
