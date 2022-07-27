@@ -3,6 +3,7 @@
 
   <%= render "form", fiestum: @fiestum %>
 
+  <%= button_to 'Cancela la fiesta', fiestum_path(@fiestum), method: :delete, class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-red-300 inline-block font-medium" %>
   <%= link_to "Show this fiestum", @fiestum, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   <%= link_to "Back to fiesta", fiesta_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
