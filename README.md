@@ -7,15 +7,11 @@ Este es un aplicación web de Ruby on Rails que usa Tailwind CSS, Devise Authent
 La fetcha de creacion del proyecto:  2 de julio, 2022
 
 ### LISTA DE QUEHACERES ###
-* Problemas de back-end
-   - Todos usarios pueden edita cada fiesta.  Necesita limita este funcion por el creador solomente.
-
-* Problemas de interfaz
-   - clasificación de eventos futuros y próximos
-   - creación de páginas para el feed de eventos futuros y los próximos eventos
-   - CSS para talla de computadora 
-   - Editar fiesta no completo CSS
-   - Crear perfiles públicos de cada usuario.
-   - usario perfiles necesita que fiestas creaste
-   - cambiar mensajes de error a español.  ahora mismo estan en ingles.
-   - agrega función para subir imágenes por cada evento
+- clasificación de eventos futuros y próximos
+- creación de páginas para el feed de eventos futuros y los próximos eventos
+- CSS para talla de computadora 
+- Editar fiesta no completo CSS
+- Crear perfiles públicos de cada usuario.
+- usario perfiles necesita que fiestas creaste
+X cambiar mensajes de error a español.  ahora mismo estan en ingles.
+- agrega función para subir imágenes por cada evento

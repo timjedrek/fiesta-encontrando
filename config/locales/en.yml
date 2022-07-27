@@ -31,3 +31,29 @@
 
 en:
   hello: "Hello world"
+
+en:
+  activerecord:
+    attributes:
+      user:
+        email: "E-mail"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        username: "Nombre de usario"
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "necesita"
+            password:
+              blank: "necesita"
+            username:
+              taken: "no puede"
+            password_confirmation:
+              confirmation: "no coinciden"
+  errors:
+    messages:
+      too_short:
+        other: "requiere al menos seis carácteres"

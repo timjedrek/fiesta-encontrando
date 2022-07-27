@@ -37,7 +37,7 @@ class FiestaController < ApplicationController
 
     respond_to do |format|
       if @fiestum.save
-        format.html { redirect_to root_path, notice: "Fiestum was successfully created." }
+        format.html { redirect_to root_path, notice: "Creó una nueva fiesta." }
         format.json { render :show, status: :created, location: @fiestum }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,7 +50,7 @@ class FiestaController < ApplicationController
   def update
     respond_to do |format|
       if @fiestum.update(fiestum_params)
-        format.html { redirect_to fiestum_url(@fiestum), notice: "Fiestum was successfully updated." }
+        format.html { redirect_to fiestum_url(@fiestum), notice: "Fiesta se actualiza" }
         format.json { render :show, status: :ok, location: @fiestum }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -64,7 +64,7 @@ class FiestaController < ApplicationController
     if current_user.id == @fiestum.creator_id
       @fiestum.destroy
       respond_to do |format|
-        format.html { redirect_to fiesta_url, notice: "Fiestum was successfully destroyed." }
+        format.html { redirect_to fiesta_url, notice: "Se cancela la fiesta" }
         format.json { head :no_content }
       end
     else
