@@ -24,6 +24,11 @@ class FiestaController < ApplicationController
 
   # GET /fiesta/1/edit
   def edit
+    if current_user.id == @fiestum.creator_id
+      current_user.created_fiesta.find(params[:id])
+    else
+      redirect_to root_path, :alert => "Area prohibido" 
+    end
   end
 
   # POST /fiesta or /fiesta.json
@@ -56,11 +61,14 @@ class FiestaController < ApplicationController
 
   # DELETE /fiesta/1 or /fiesta/1.json
   def destroy
-    @fiestum.destroy
-
-    respond_to do |format|
-      format.html { redirect_to fiesta_url, notice: "Fiestum was successfully destroyed." }
-      format.json { head :no_content }
+    if current_user.id == @fiestum.creator_id
+      @fiestum.destroy
+      respond_to do |format|
+        format.html { redirect_to fiesta_url, notice: "Fiestum was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to root_path, :alert => "Area prohibido" 
     end
   end
 

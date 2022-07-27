@@ -5,6 +5,9 @@
   <% if notice.present? %>
     <p class="py-2 px-3 w-full text-center bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
+  <% if alert.present? %>
+    <p class="py-2 px-3 w-full text-center bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
+  <% end %>
   </div>
   <!--Flex container-->
   <div class="flex flex-col md:flex-row items-center justify-between">
