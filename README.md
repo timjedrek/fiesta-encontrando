@@ -17,5 +17,6 @@ La fetcha de creacion del proyecto:  2 de julio, 2022
    - CSS para talla de computadora 
    - Editar fiesta no completo CSS
    - Crear perfiles públicos de cada usuario.
+   - usario perfiles necesita que fiestas creaste
    - cambiar mensajes de error a español.  ahora mismo estan en ingles.
    - agrega función para subir imágenes por cada evento
