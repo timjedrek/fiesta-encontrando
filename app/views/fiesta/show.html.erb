@@ -1,6 +1,7 @@
-<div class="flex flex-col">
-  <!-- Navbar -->
-  <nav class="relative p-6 bg-gray-700 text-white">
+<div class="flex flex-col items-center">
+  <!-- Navbar mobile only-->
+  <div class="md:hidden">
+  <nav class="relative p-6 bg-gray-700 text-white w-full">
     <!--Notice-->
     <div class="w-full">
     <% if notice.present? %>
@@ -25,110 +26,117 @@
       </div>
     </div>
   </nav>
+  </div>
+  <div class="hidden md:block md:w-full">
+    <%= render 'navbar' %>
+  </div>
+  <!--Main container-->
+  <div class="w-full md:w-1/2 md:my-5 pb-3 md:bg-white md:drop-shadow-xl md:rounded-2xl">
+    <!--Image-->
+    <div class="text-center">
+      <%= image_tag "fiestas/#{rand(12)}", class: "object-cover min-w-full md:rounded-t-2xl" %>
+    </div>
+    
+    <!--date-->
+    <div class="mt-2 px-3 text-xs font-medium">
+      <%= @fiestum.fetcha.strftime("%^a, %^b %-d, %Y") %> at <%= @fiestum.fetcha.strftime("%l:%M %p") %>
+    </div>
+    
+    <!--Name-->
+    <div class="px-3">
+      <strong class="block font-bold text-2xl">
+        <%= @fiestum.nombre %>
+      </strong>
+    </div>
 
-  <!--Image-->
-  <div class="text-center min-w-full ">
-    <%= image_tag "fiestas/#{rand(12)}", class: "object-cover" %>
-  </div>
-  
-  <!--date-->
-  <div class="mt-2 px-3 text-xs font-medium">
-    <%= @fiestum.fetcha.strftime("%^a, %^b %-d, %Y") %> at <%= @fiestum.fetcha.strftime("%l:%M %p") %>
-  </div>
-  
-  <!--Name-->
-  <div class="px-3">
-    <strong class="block font-bold text-2xl">
-      <%= @fiestum.nombre %>
-    </strong>
-  </div>
+    <!--Location.-->
+    <div class="px-3 text-slate-700">
+      <%= @fiestum.lugar %>
+    </div>
 
-  <!--Location.-->
-  <div class="px-3 text-slate-700">
-    <%= @fiestum.lugar %>
-  </div>
-
-  <!--Buttons-->
-  <div class="flex flex-row justify-around text-sm">
-    <!--star-->
-    <% if user_signed_in? %>
-      <% if current_user && @fiestum.creator != current_user && !@fiestum.attendees.include?(current_user) %>
-        <div class="flex flex-col m-3">
-          <%= link_to create_attending_fiestum_path(:user_id => current_user.id, :id => @fiestum.id), data: { turbo_method: :post }, class: "flex flex-col items-center text-center" do %>
-            <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300">
-              ★
-            </div>
-            Interestante
-          <% end %>
-        </div>
-      <% elsif @fiestum.creator == current_user %>
-        <div class="flex flex-col m-3">
-          <%= link_to @fiestum, class: "flex flex-col items-center text-center" do %>
-            <div class="bg-slate-300 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-400">
-              ✓ 
-            </div>
-            Creaste la fiesta
-          <% end %> 
-        </div>
+    <!--Buttons-->
+    <div class="flex flex-row justify-around text-sm">
+      <!--star-->
+      <% if user_signed_in? %>
+        <% if current_user && @fiestum.creator != current_user && !@fiestum.attendees.include?(current_user) %>
+          <div class="flex flex-col m-3">
+            <%= link_to create_attending_fiestum_path(:user_id => current_user.id, :id => @fiestum.id), data: { turbo_method: :post }, class: "flex flex-col items-center text-center" do %>
+              <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300 lg:rounded-lg lg:mb-2 lg:w-36">
+                ★
+              </div>
+              Interestante
+            <% end %>
+          </div>
+        <% elsif @fiestum.creator == current_user %>
+          <div class="flex flex-col m-3">
+            <%= link_to @fiestum, class: "flex flex-col items-center text-center" do %>
+              <div class="bg-slate-300 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-400 lg:rounded-lg lg:mb-2 lg:w-36">
+                ✓ 
+              </div>
+              Creaste la fiesta
+            <% end %> 
+          </div>
+        <% else %>
+          <div class="flex flex-col m-3">
+            <%= link_to destroy_attending_fiestum_path(:user_id => current_user.id, :id => @fiestum.id), data: { turbo_method: :delete }, class: "flex flex-col items-center text-center" do %>
+              <div class="bg-slate-300 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-400 lg:rounded-lg lg:mb-2 lg:w-36">
+                ✓
+              </div>
+              Vamos a la fiesta
+            <% end %>
+          </div>
+        <% end %>
       <% else %>
         <div class="flex flex-col m-3">
-          <%= link_to destroy_attending_fiestum_path(:user_id => current_user.id, :id => @fiestum.id), data: { turbo_method: :delete }, class: "flex flex-col items-center text-center" do %>
-            <div class="bg-slate-300 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-400">
-              ✓
+          <%= link_to new_user_session_path, class: "flex flex-col items-center text-center" do %>
+            <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300 lg:rounded-lg lg:mb-2 lg:w-36">
+              ★
             </div>
-            Vamos a la fiesta
+            Inicia para <br>ir alas fiestas
           <% end %>
         </div>
       <% end %>
-    <% else %>
+      <!--more info-->
+      <div class="flex flex-col items-center text-center m-3">
+        <div class="bg-slate-100 text-black w-min px-3 py-1 rounded-full text-center text-xl text-bold hover:bg-slate-300 lg:rounded-lg lg:mb-2 lg:w-36">
+          ＋
+        </div>
+        Más información
+      </div>
+      <!--back-->
       <div class="flex flex-col m-3">
-        <%= link_to new_user_session_path, class: "flex flex-col items-center text-center" do %>
-          <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300">
-            ★
+        <%= link_to root_path, class: "flex flex-col items-center text-center" do %>
+          <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300 lg:rounded-lg lg:mb-2 lg:w-36">
+            ↩
           </div>
-          Inicia para <br>ir alas fiestas
+          Vuelve Atrás
         <% end %>
       </div>
-    <% end %>
-    <!--more info-->
-    <div class="flex flex-col items-center text-center m-3">
-      <div class="bg-slate-100 text-black w-min px-3 py-1 rounded-full text-center text-xl text-bold hover:bg-slate-300">
-        ＋
+    </div>
+
+    <!--What to expect-->
+    <div class="px-3">
+      <strong class="block font-bold text-lg">
+        Que esperar
+      </strong>
+      <div class=""> 
+        <%= @fiestum.descripcion %>
       </div>
-      Más información
     </div>
-    <!--back-->
-    <div class="flex flex-col m-3">
-      <%= link_to root_path, class: "flex flex-col items-center text-center" do %>
-        <div class="bg-slate-100 w-min px-3 py-1 rounded-full text-xl text-bold text-black hover:bg-slate-300">
-          ↩
-        </div>
-        Vuelve Atrás
-      <% end %>
-    </div>
-  </div>
 
-  <!--What to expect-->
-  <div class="px-3">
-    <strong class="block font-bold text-lg">
-      Que esperar
-    </strong>
-    <div class=""> 
-      <%= @fiestum.descripcion %>
+    <!--Meet the host-->
+    <div class="px-3">
+      <strong class="block font-bold text-lg">
+        Conoce al creador de fiesta
+      </strong>
+      @<%= @fiestum.creator.username %> crea esta fiesta en <%= @fiestum.created_at.strftime("%b %-d, %Y") %>
     </div>
-  </div>
 
-  <!--Meet the host-->
-  <div class="px-3">
-    <strong class="block font-bold text-lg">
-      Conoce al creador de fiesta
-    </strong>
-     @<%= @fiestum.creator.username %> crea esta fiesta en <%= @fiestum.created_at.strftime("%b %-d, %Y") %>
+    <!--Bottom buttons-->
+    <% if @fiestum.creator == current_user %>
+      <div class="mt-6 mb-3 px-3">
+      <%= link_to 'Edita tu fiesta', edit_fiestum_path(@fiestum), class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-gray-300 inline-block font-medium" %>
+      </div>
+    <% end %>
   </div>
-
-  <!--Bottom buttons-->
-  <% if @fiestum.creator == current_user %>
-    <div class="mt-6 mb-3 px-3">
-    <%= link_to 'Edita tu fiesta', edit_fiestum_path(@fiestum), class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-gray-300 inline-block font-medium" %>
-    </div>
-  <% end %>
+</div>
