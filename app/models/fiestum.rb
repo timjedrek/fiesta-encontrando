@@ -8,4 +8,7 @@ class Fiestum < ApplicationRecord
 
   has_many :attending_fiesta
   has_many :attendees, through: :attending_fiesta, source: :user
+
+  scope :proximas, -> {where('fetcha >= ?', Time.now)}
+  scope :pasadas,   -> {where('fetcha < ?', Time.now)}
 end
