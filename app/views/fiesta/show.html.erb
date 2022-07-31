@@ -132,6 +132,16 @@
       @<%= @fiestum.creator.username %> crea esta fiesta en <%= @fiestum.created_at.strftime("%b %-d, %Y") %>
     </div>
 
+    <!--who's going-->
+    <div class="px-3">
+      <strong class="block font-bold text-lg">
+        ¿Quien va?
+      </strong>
+      <% @fiestum.attendees.reverse_each do |attendee| %>
+        @<%= attendee.username %> 
+      <% end %>
+    </div>
+
     <!--Bottom buttons-->
     <% if @fiestum.creator == current_user %>
       <div class="mt-6 mb-3 px-3">
