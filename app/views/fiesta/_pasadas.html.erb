@@ -6,17 +6,23 @@
     <div class="font-bold text-2xl">
       Fiestas Pasadas
     </div>
+        <!--View More-->
+    <div class="text-slate-500 hover:bg-slate-100 rounded-xl p-2 hidden md:block">
+      Ver más
+    </div>
   </div>
   <!--Actual feed content-->
-  <div class="flex flex-col items-center pb-10" >
-    <% @fiesta.last(6).reverse_each do | fiestum | %>
-      <%= render "bubble", fiestum: fiestum  %>
-    <% end %>
+  <div class="flex flex-row justify-center">
+    <div class="flex flex-col items-center pb-10 md:max-w-fit md:grid md:grid-cols-2 lg:grid-cols-3 md:justify-center md:place-items-center md:gap-3" >
+      <% @fiesta.last(6).reverse_each do | fiestum | %>
+        <%= render "bubble", fiestum: fiestum  %>
+      <% end %>
 
-    <!--View more button-->
-    <div class="flex flex-col items-center justify-center bg-white drop-shadow-md rounded-xl w-72 h-32 p-0 mx-2 mb-5">
-      <div class="flex flex-row justify-center text-slate-500 hover:bg-slate-100 rounded-xl p-2 w-30">
-        Ver más
+      <!--View more button-->
+      <div class="flex flex-col items-center justify-center bg-white drop-shadow-md rounded-xl w-72 h-32 p-0 mx-2 mb-5 md:hidden">
+        <div class="flex flex-row justify-center text-slate-500 hover:bg-slate-100 rounded-xl p-2 w-30">
+          Ver más
+        </div>
       </div>
     </div>
   </div>
