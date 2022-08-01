@@ -1,13 +1,13 @@
 <!--Container for both sides-->
 <!--This code was taken from the sign in page and then modified.  Just simply reversing the sides for effect-->
-<div class="flex flex-row-reverse h-screen bg-slate-900 text-slate-200">
+<div class="flex flex-row-reverse justify-center h-screen bg-slate-900 text-slate-200">
 
   <!--Left side form-->
-  <div class="flex flex-col md:w-3/5 justify-center items-center">
+  <div class="flex flex-col lg:w-3/5 justify-center items-center">
       <h1 class="my-4 text-3xl font-semibold text-center">
       Incribe Una Cuenta
       </h1>
-    <div class="items-center justify-center pt-6 p-12 md:w-1/2">
+    <div class="items-center justify-center pt-6 p-12 lg:w-1/2">
       <div class="w-full">
         
         <% if notice.present? %>
@@ -62,7 +62,7 @@
   </div>
 
   <!--right side picture (hidden in mobile view)-->
-  <div class="hidden md:block w-2/5 overflow-hidden">
-    <%= image_tag "sign_up/#{rand(5)}", class: "min-w-full min-h-full" %>
+  <div class="hidden lg:block w-2/5 overflow-hidden">
+    <%= image_tag "sign_up/#{rand(5)}", class: "min-w-full min-h-full object-cover" %>
   </div>
 </div>
