@@ -38,7 +38,7 @@ en:
   activerecord:
     attributes:
       user:
-        email: "E-mail"
+        email: "El correro electrónico"
         password: "Contraseña"
         password_confirmation: "Confirmación de contraseña"
         username: "Nombre de usario"
@@ -49,6 +49,7 @@ en:
           attributes:
             email:
               blank: "necesita"
+              taken: "no puede"
             password:
               blank: "necesita"
             username:
