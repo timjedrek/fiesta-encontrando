@@ -1,7 +1,19 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New fiestum</h1>
+<%= render 'navbar' %>
+
+<div class="mx-auto md:w-1/2 w-full p-5">
+  <div class="flex flex-row justify-between items-center py-3">
+    <!--Headline-->
+    <div class="font-bold text-2xl">
+      Nueva Fiesta
+    </div>
+    <%= link_to root_path do %>
+      <div class="text-slate-500 hover:bg-slate-100 rounded-xl p-2">
+        ↩ Vuelve Atrás
+      </div>
+    <% end %>
+    
+  </div>
 
   <%= render "form", fiestum: @fiestum %>
 
-  <%= link_to 'Back to fiesta', fiesta_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>

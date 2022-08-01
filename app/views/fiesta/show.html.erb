@@ -1,31 +1,31 @@
 <div class="flex flex-col items-center">
   <!-- Navbar mobile only-->
   <div class="md:hidden">
-  <nav class="relative p-6 bg-gray-700 text-white w-full">
-    <!--Notice-->
-    <div class="w-full">
-    <% if notice.present? %>
-      <p class="py-2 px-3 w-full text-center bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p class="py-2 px-3 w-full text-center bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
-    <% end %>
-    </div>
-    <!--Flex container-->
-    <div class="flex flex-col md:flex-row items-center justify-between">
-      <!--Logo-->
-      <div class="pt-2 flex flex-row items-center gap-5">
-        <!--Image-->
-        <div class="">
-          <%= image_tag "logo_hat.png", class: "max-h-40 md:max-h-20" %>
-        </div>
-        <!--text-->
-        <h1 class="font-curs text-5xl hover:text-slate-500">
-          <%= link_to 'Fiesta Encontrando', root_path %>
-        </h1>
+    <nav class="relative p-6 bg-gray-700 text-white w-full">
+      <!--Notice-->
+      <div class="w-full">
+      <% if notice.present? %>
+        <p class="py-2 px-3 w-full text-center bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="py-2 px-3 w-full text-center bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
+      <% end %>
       </div>
-    </div>
-  </nav>
+      <!--Flex container-->
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <!--Logo-->
+        <div class="pt-2 flex flex-row items-center gap-5">
+          <!--Image-->
+          <div class="">
+            <%= image_tag "logo_hat.png", class: "max-h-40 md:max-h-20" %>
+          </div>
+          <!--text-->
+          <h1 class="font-curs text-5xl hover:text-slate-500">
+            <%= link_to 'Fiesta Encontrando', root_path %>
+          </h1>
+        </div>
+      </div>
+    </nav>
   </div>
   <div class="hidden md:block md:w-full">
     <%= render 'navbar' %>
@@ -38,19 +38,19 @@
     </div>
     
     <!--date-->
-    <div class="mt-2 px-3 text-xs font-medium">
+    <div class="mt-2 px-5 text-xs font-medium">
       <%= @fiestum.fetcha.strftime("%^a, %^b %-d, %Y") %> at <%= @fiestum.fetcha.strftime("%l:%M %p") %>
     </div>
     
     <!--Name-->
-    <div class="px-3">
+    <div class="px-5">
       <strong class="block font-bold text-2xl">
         <%= @fiestum.nombre %>
       </strong>
     </div>
 
     <!--Location.-->
-    <div class="px-3 text-slate-700">
+    <div class="px-5 text-slate-700">
       <%= @fiestum.lugar %>
     </div>
 
@@ -115,7 +115,7 @@
     </div>
 
     <!--What to expect-->
-    <div class="px-3">
+    <div class="px-5">
       <strong class="block font-bold text-lg">
         Que esperar
       </strong>
@@ -125,7 +125,7 @@
     </div>
 
     <!--Meet the host-->
-    <div class="px-3">
+    <div class="px-5">
       <strong class="block font-bold text-lg">
         Conoce al creador de fiesta
       </strong>
@@ -133,7 +133,7 @@
     </div>
 
     <!--who's going-->
-    <div class="px-3">
+    <div class="px-5">
       <strong class="block font-bold text-lg">
         ¿Quien va?
       </strong>
@@ -144,8 +144,8 @@
 
     <!--Bottom buttons-->
     <% if @fiestum.creator == current_user %>
-      <div class="mt-6 mb-3 px-3">
-      <%= link_to 'Edita tu fiesta', edit_fiestum_path(@fiestum), class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-gray-300 inline-block font-medium" %>
+      <div class="mt-6 mb-3 px-5">
+      <%= link_to 'Edita su fiesta', edit_fiestum_path(@fiestum), class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-gray-300 inline-block font-medium" %>
       </div>
     <% end %>
   </div>
