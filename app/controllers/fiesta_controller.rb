@@ -1,6 +1,6 @@
 class FiestaController < ApplicationController
   before_action :set_fiestum, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :fiesta_pasadas, :fiesta_proximas]
 
   # GET /fiesta or /fiesta.json
   def index
@@ -23,11 +23,11 @@ class FiestaController < ApplicationController
   end
 
   # GET /fiesta/pasadas
-  def pasadas
+  def fiesta_pasadas
   end
 
   # GET /fiesta/proximas
-  def proximas
+  def fiesta_proximas
   end
 
   # GET /fiesta/1/edit
