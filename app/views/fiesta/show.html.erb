@@ -44,13 +44,13 @@
     
     <!--Name-->
     <div class="px-5">
-      <strong class="block font-bold text-2xl">
+      <strong class="block font-bold text-2xl truncate">
         <%= @fiestum.nombre %>
       </strong>
     </div>
 
     <!--Location.-->
-    <div class="px-5 text-slate-700">
+    <div class="px-5 text-slate-700 truncate">
       <%= @fiestum.lugar %>
     </div>
 
@@ -119,7 +119,7 @@
       <strong class="block font-bold text-lg">
         Que esperar
       </strong>
-      <div class=""> 
+      <div class="text-ellipsis overflow-hidden"> 
         <%= @fiestum.descripcion %>
       </div>
     </div>

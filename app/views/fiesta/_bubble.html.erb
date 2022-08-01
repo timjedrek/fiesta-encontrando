@@ -1,4 +1,4 @@
-<div id="<%= dom_id fiestum %>" class="flex flex-col justify-start bg-white drop-shadow-md rounded-xl p-0 mx-2 mb-5 w-min"> 
+<div id="<%= dom_id fiestum %>" class="flex flex-col justify-start bg-white drop-shadow-md rounded-xl p-0 mx-2 mb-5 w-72"> 
   <!--Picture-->
   <div class="text-center h-48 w-72 ">
     <%= link_to fiestum do %>
@@ -18,14 +18,14 @@
 
   <!--Name-->
   <div class="px-3">
-    <strong class="block font-medium mb-1">
+    <strong class="block font-medium mb-1 truncate">
       <%= link_to fiestum.nombre, fiestum, class: "hover:text-gray-600" %>
     </strong>
   </div>
 
   <!--Location.-->
-  <div class="px-3">
-    <%= link_to fiestum.lugar, fiestum, class: "hover:text-gray-600" %>
+  <div class="px-3 truncate">
+    <%= link_to fiestum.lugar, fiestum, class: "hover:text-gray-600 " %>
   </div>
 
   <!--Created by-->
