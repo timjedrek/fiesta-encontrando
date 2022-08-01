@@ -3,7 +3,7 @@
   <!--Error-->
   <% if fiestum.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(fiestum.errors.count, "error") %> prohibited this fiestum from being saved:</h2>
+      <h2><%= pluralize(fiestum.errors.count, "errores") %> no pueden para guardar la fiesta:</h2>
 
       <ul>
         <% fiestum.errors.each do |error| %>
@@ -46,5 +46,9 @@
     </div>
   <% end %>
 
+  <!--Back button-->
+  <div class="inline">
+    <%= link_to "Vuelve Atrás", 'javascript:history.back()',  class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-gray-300 inline-block font-medium" %>
+  </div>
 
 <% end %>

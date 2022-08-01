@@ -32,6 +32,8 @@
 en:
   hello: "Hello world"
 
+# custom error messages.. haha. It works tho..so yea.
+
 en:
   activerecord:
     attributes:
@@ -53,11 +55,25 @@ en:
               taken: "no puede"
             password_confirmation:
               confirmation: "no coinciden"
+        
+        fiestum:
+          attributes:
+            nombre:
+              blank: "necesita"
+            descripcion:
+              blank: "necesita"              
+            lugar:
+              blank: "necesita"
+            fetcha:
+              blank: "necesita"
+
   errors:
     messages:
       too_short:
         other: "requiere al menos seis carácteres"
 
+
+# the shit below don't work.  Supposed to use the I18n thing but it's not installed or working right... ugh
 date: 
     abbr_day_names:
     - dom
