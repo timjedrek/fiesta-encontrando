@@ -22,6 +22,14 @@ class FiestaController < ApplicationController
     @attended_fiesta = current_user.attended_fiesta #<---- to view attended events on profile page
   end
 
+  # GET /fiesta/pasadas
+  def pasadas
+  end
+
+  # GET /fiesta/proximas
+  def proximas
+  end
+
   # GET /fiesta/1/edit
   def edit
     if current_user.id == @fiestum.creator_id

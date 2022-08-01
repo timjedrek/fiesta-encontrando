@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   # SHOW ATTENDING FIESTAS IN PROFILE PAGE #
   get '/users/:id/attended_events', to: "users#show_attended_fiesta", as: "show_attended_fiesta"
 
+  # PROXIMAS AND PASADAS PAGES #
+  get '/fiesta/pasadas', to: 'fiesta#pagina_pasadas'
+  get '/fiesta/proximas', to: 'fiesta#pagina_proximas'
+
   # FROM SCAFFOLDING FIESTA #
   resources :fiesta
 
