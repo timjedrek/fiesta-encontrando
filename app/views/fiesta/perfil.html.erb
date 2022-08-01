@@ -9,13 +9,29 @@
       <p class="mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" id="alert"><%= alert %></p>
     <% end %>
     
-      <h1 class="my-4 text-2xl font-bold text-center text-gray-700">
-        Fiestas que creé
-      </h1>
-
-    <!--mis mifiestas feed-->
+    <!--Attending events -->
+    <h1 class="my-4 text-2xl font-bold text-center text-gray-700">
+      Próximas fiestas a las que va
+    </h1>
     <div id="" class="">
-      <%= render 'misfiestas' %>
+      <%= render 'fiesta/perfil/fiestas_proximas' %>
     </div>
+
+    <!--Attending events -->
+    <h1 class="my-4 text-2xl font-bold text-center text-gray-700">
+      Las fiestas que fue
+    </h1>
+    <div id="" class="">
+      <%= render 'fiesta/perfil/fiestas_pasadas' %>
+    </div>
+
+    <!--mis mifiestas feed (the parties I created) -->
+    <h1 class="my-4 text-2xl font-bold text-center text-gray-700">
+      Las fiestas que creó
+    </h1>
+    <div id="" class="">
+      <%= render 'fiesta/perfil/creo' %>
+    </div>
+
   </div>
 </main>
