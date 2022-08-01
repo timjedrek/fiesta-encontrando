@@ -24,10 +24,12 @@ class FiestaController < ApplicationController
 
   # GET /fiesta/pasadas
   def fiesta_pasadas
+    @fiesta = Fiestum.all
   end
 
   # GET /fiesta/proximas
   def fiesta_proximas
+    @fiesta = Fiestum.all
   end
 
   # GET /fiesta/1/edit
