@@ -5,7 +5,10 @@ Este es un aplicación web de Ruby on Rails que usa Tailwind CSS, Devise Authent
 ## LAS NOTAS ##
 
 La fetcha de creacion del proyecto:  2 de julio, 2022<br>
-La fetcha de publicación del proyecto: 1 de agosto, 2022
+La fetcha de publicación del proyecto: 1 de agosto, 2022<br>
+
+Vamos ala FIESTA!<br> 
+En vivo versión: https://lit-eyrie-22579.herokuapp.com
 
 ### LISTA DE QUEHACERES PARA SIGUENTE VERSIÓN
 - Perfil publica para cada usarios
