@@ -7,9 +7,11 @@
       Fiestas Pasadas
     </div>
         <!--View More-->
+    <%= link_to fiesta_pasadas_path  do %>        
     <div class="text-slate-500 hover:bg-slate-100 rounded-xl p-2 hidden md:block">
       Ver más
     </div>
+    <% end %>
   </div>
   <!--Actual feed content-->
   <div class="flex flex-row justify-center">
@@ -20,9 +22,11 @@
 
       <!--View more button-->
       <div class="flex flex-col items-center justify-center bg-white drop-shadow-md rounded-xl w-72 h-32 p-0 mx-2 mb-5 md:hidden">
-        <div class="flex flex-row justify-center text-slate-500 hover:bg-slate-100 rounded-xl p-2 w-30">
-          Ver más
-        </div>
+        <%= link_to fiesta_pasadas_path  do %>        
+          <div class="flex flex-row justify-center text-slate-500 hover:bg-slate-100 rounded-xl p-2 w-30">
+            Ver más
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

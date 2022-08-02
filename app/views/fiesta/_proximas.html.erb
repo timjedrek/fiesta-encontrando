@@ -7,9 +7,11 @@
       Fiestas Proximas
     </div>
     <!--View More-->
-    <div class="text-slate-500 hover:bg-slate-100 rounded-xl p-2">
-      Ver más
-    </div>
+    <%= link_to fiesta_proximas_path  do %>        
+      <div class="text-slate-500 hover:bg-slate-100 rounded-xl p-2">
+        Ver más
+      </div>
+    <% end %>
   </div>
   <!--Actual feed content-->
   <div class="flex flex-row justify-center">
