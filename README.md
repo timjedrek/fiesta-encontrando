@@ -17,3 +17,4 @@ En vivo versión: https://lit-eyrie-22579.herokuapp.com
 
 ### ERRORES CONOCIDOS
 - Vacio nombre de usario puede.  Pero, si inscribe un usario con vacio nomber, otro registro no puede usar vacio nombre
+- El buton de mas informacion no utilizar.  
