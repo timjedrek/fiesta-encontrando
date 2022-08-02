@@ -14,29 +14,29 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :nombre %>
+    <%= form.label :nombre , class: "font-semibold"%>
     <%= form.text_field :nombre, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :descripción %>
+    <%= form.label :descripción , class: "font-semibold"%>
     <%= form.text_area :descripcion, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :lugar %>
+    <%= form.label :lugar , class: "font-semibold"%>
     <%= form.text_field :lugar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :fetcha %>
+    <%= form.label :fetcha , class: "font-semibold"%>
     <%= form.datetime_field :fetcha, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <!--Code for when making a new fiesta-->
   <% if action_name == "new" ||  action_name == "create" %>
     <div class="my-5">
-      <%= form.label 'Agrega una imagen' %><br>
+      <%= form.label 'Agrega una imagen' , class: "font-semibold"%><br>
       <%= form.file_field :imagen, accept: 'image/png, image/gif, image/jpeg' %>
     </div>
     <div class="inline">
@@ -47,8 +47,8 @@
   <!--Code for when editing a fiesta-->
   <% if action_name == "edit" || action_name == "update" %>
     <div class="my-5">
-      <%= form.label 'Cambia la imagen' %><br>
-      <%= form.file_field :imagen, accept: 'image/png, image/gif, image/jpeg' %>
+      <%= form.label 'Cambia la imagen' , class: "font-semibold"%>
+      <%= form.file_field :imagen, accept: 'image/png, image/gif, image/jpeg', class: "mt-3" %>
     </div>
 
     <div class="inline">
