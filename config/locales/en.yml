@@ -67,6 +67,8 @@ en:
               blank: "necesita"
             fetcha:
               blank: "necesita"
+            imagen:
+              blank: "necesita"
 
   errors:
     messages:

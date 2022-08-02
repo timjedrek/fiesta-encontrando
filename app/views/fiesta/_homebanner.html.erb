@@ -1,7 +1,7 @@
 <!--Need to randomize these bg pics later.. not an easy fix but doable -->
-<header class="w-full h-96 bg-[url('home_banner/0')] bg-cover bg-center flex justify-center items-center">
-    <div class="flex flex-col justify-center items-center">
-        <h1 class=" text-center text-5xl text-amber-200 font-bold drop-shadow-lg">El Lugar<br>
+<header class="w-full h-96 bg-[url('<%= randomized_background_image %>')] bg-cover bg-center flex justify-center items-center">
+    <div class="flex flex-col justify-center items-center drop-shadow-2xl">
+        <h1 class=" text-center text-5xl text-amber-200 font-bold">El Lugar<br>
         <span class="text-amber-100 text-4xl">Para encontrando las fiestas</span>
         </h1>
         <p class="my-5 text-center text-xl text-white">En su área y región</p>
@@ -9,3 +9,5 @@
         
     </div>
 </header>
+
+      <%#= image_tag "fiestas/#{rand(12)}", class: "object-cover min-w-full md:rounded-t-2xl" %>

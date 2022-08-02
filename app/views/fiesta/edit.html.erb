@@ -1,6 +1,8 @@
 <%= render 'navbar' %>
 
+<%= image_tag @fiestum.imagen, class: "object-cover min-w-full md:hidden"%>
 <div class="mx-auto md:w-1/2 w-full p-5">
+  <%= image_tag @fiestum.imagen, class: "object-cover min-w-full rounded-2xl hidden md:block"%>
   <div class="flex flex-row justify-between items-center py-3">
     <!--Headline-->
     <div class="font-bold text-2xl">

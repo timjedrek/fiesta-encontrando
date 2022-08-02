@@ -33,14 +33,24 @@
     <%= form.datetime_field :fetcha, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <!--Two different buttons with the same function.  one says one thing, the other says another-->
+  <!--Code for when making a new fiesta-->
   <% if action_name == "new" ||  action_name == "create" %>
+    <div class="my-5">
+      <%= form.label 'Agrega una imagen' %><br>
+      <%= form.file_field :imagen, accept: 'image/png, image/gif, image/jpeg' %>
+    </div>
     <div class="inline">
       <%= form.submit "Crea una nueva fiesta",  class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-green-300 inline-block font-medium" %>
     </div>
   <% end %>
 
+  <!--Code for when editing a fiesta-->
   <% if action_name == "edit" || action_name == "update" %>
+    <div class="my-5">
+      <%= form.label 'Cambia la imagen' %><br>
+      <%= form.file_field :imagen, accept: 'image/png, image/gif, image/jpeg' %>
+    </div>
+
     <div class="inline">
       <%= form.submit "Actualiza su fiesta",  class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-green-300 inline-block font-medium" %>
     </div>
