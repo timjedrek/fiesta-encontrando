@@ -37,7 +37,7 @@
   <% if action_name == "new" ||  action_name == "create" %>
     <div class="my-5">
       <%= form.label 'Agrega una imagen' , class: "font-semibold"%><br>
-      <%= form.file_field :imagen, accept: 'image/png, image/gif, image/jpeg' %>
+      <%= form.file_field :imagen, accept: 'image/png, image/gif, image/jpeg', class: "mt-3" %>
     </div>
     <div class="inline">
       <%= form.submit "Crea una nueva fiesta",  class: "mt-2 w-full text-center rounded-lg py-3 px-5 bg-gray-100 hover:bg-green-300 inline-block font-medium" %>
@@ -47,7 +47,7 @@
   <!--Code for when editing a fiesta-->
   <% if action_name == "edit" || action_name == "update" %>
     <div class="my-5">
-      <%= form.label 'Cambia la imagen' , class: "font-semibold"%>
+      <%= form.label 'Cambia la imagen' , class: "font-semibold"%> <br>
       <%= form.file_field :imagen, accept: 'image/png, image/gif, image/jpeg', class: "mt-3" %>
     </div>
 
