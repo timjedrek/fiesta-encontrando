@@ -40,3 +40,5 @@ dontreadme.md
 .DS_Store
 
 /fiestas/
+# Ignore application configuration
+/config/application.yml

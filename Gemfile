@@ -55,6 +55,9 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'rails-i18n', '~> 7.0.0' # For 7.0.0 <--- didn't work.. meh
 gem 'active_storage_validations', '~> 0.1'
+gem "figaro"
+gem "image_processing", ">= 1.2"
+gem "aws-sdk-s3", require: false
 #################
 
 group :development, :test do
