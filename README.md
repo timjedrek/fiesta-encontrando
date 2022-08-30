@@ -8,7 +8,7 @@ La fetcha de creacion del proyecto:  2 de julio, 2022<br>
 La fetcha de publicación del proyecto: 1 de agosto, 2022<br>
 
 Vamos ala FIESTA!<br> 
-En vivo versión: https://lit-eyrie-22579.herokuapp.com
+En vivo versión: https://fiesta.timjedrek.com
 
 ### LISTA DE QUEHACERES PARA SIGUENTE VERSIÓN
 - Perfil publica para cada usarios
